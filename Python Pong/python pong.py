@@ -56,25 +56,9 @@ score2 = pygame.font.Font("font/PixelFont.ttf", 100)
 underline = pygame.Surface((1860, 20))
 underline.fill("White")
 
-score1_suf_0 = score1.render("0", False, "White")
-score2_suf_0 = score1.render("0", False, "White")
-
-score1_suf_1 = score1.render("1", False, "White")
-score2_suf_1 = score1.render("1", False, "White")
-
-score1_suf_2 = score1.render("2", False, "White")
-score2_suf_2 = score1.render("2", False, "White")
-
-score1_suf_3 = score1.render("3", False, "White")
-score2_suf_3 = score1.render("3", False, "White")
-
-score1_suf_4 = score1.render("4", False, "White")
-score2_suf_4 = score1.render("4", False, "White")
-
-score1_suf_5 = score1.render("5", False, "White")
-score2_suf_5 = score1.render("5", False, "White")
-
 while True:
+    score1_suf = score1.render(f'{score_player1}', False, "White")
+    score2_suf = score1.render(f'{score_player2}', False, "White")
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -109,37 +93,13 @@ while True:
         screen.blit(player2,player2_rect)
         screen.blit(ball,ball_rect)
 
-        if(score_player1 == 0):
-            screen.blit(score1_suf_0,(20,20))
-        if(score_player2 == 0):
-            screen.blit(score2_suf_0,(1790,20))
-
-        if(score_player1 == 1):
-            screen.blit(score1_suf_1,(20,20))
-        if(score_player2 == 1):
-            screen.blit(score2_suf_1,(1790,20))
-
-        if(score_player1 == 2):
-            screen.blit(score1_suf_2,(20,20))
-        if(score_player2 == 2):
-            screen.blit(score2_suf_2,(1790,20))
-
-        if(score_player1 == 3):
-            screen.blit(score1_suf_3,(20,20))
-        if(score_player2 == 3):
-            screen.blit(score2_suf_3,(1790,20))
-
-        if(score_player1 == 4):
-            screen.blit(score1_suf_4,(20,20))
-        if(score_player2 == 4):
-            screen.blit(score2_suf_4,(1790,20))
-
+        
+        screen.blit(score1_suf,(20,20))
+        screen.blit(score2_suf,(1790,20))
         if(score_player1 == 5):
-            screen.blit(score1_suf_5,(20,20))
             title_screen = 1
             game_won = 1
         if(score_player2 == 5):
-            screen.blit(score2_suf_5,(1790,20))
             title_screen = 1
             game_won = 2
             
